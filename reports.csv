@@ -1,0 +1,9 @@
+id,animal,location,priority,status,reported_at,resolved_at
+R-001,Dog,Subdivision A,High,Resolved,2026-08-03 09:00:00,2026-08-03 13:00:00
+R-002,Cat,Subdivision B,Medium,Resolved,2026-08-10 08:00:00,2026-08-12 10:00:00
+R-003,Dog,Subdivision A,Low,Pending,2026-09-02 15:00:00,
+R-004,Dog,Subdivision C,High,Dispatched,2026-09-09 11:00:00,
+R-005,Cat,Subdivision B,Medium,Rejected,2026-09-15 07:00:00,
+R-006,Dog,Subdivision C,High,Resolved,2026-10-01 16:00:00,2026-10-01 19:00:00
+R-007,Cat,Subdivision A,Low,Endorsed,2026-10-04 10:00:00,
+R-008,Dog,Subdivision B,High,Deceased,2026-10-05 08:00:00,
