@@ -1,9 +1,36 @@
 # STRAY-SAFE Analytics
 
-A Flutter dashboard for exploring stray-animal reports. It reads report data
-from `assets/reports.csv` and displays summary metrics, status and location
-charts, a monthly report trend, and individual case records. Use the priority
-filters to update the dashboard.
+A Flutter analytics dashboard for stray-animal reports (FRE413 final project).
+It reads report data from `assets/reports.csv` and recalculates everything from
+that data - nothing is typed in by hand.
+
+## Dashboard components
+
+| Guideline component | Where it is in the app |
+| --- | --- |
+| KPI cards (3+) | Six cards: Total Reports, Active Cases, Resolution Rate, High Priority, Avg Response, Rejected |
+| Graphs (2-3) | Case status donut, reports-by-subdivision bar chart, monthly report trend line (titled, axis-labelled, with legend/tooltips) |
+| Records | Case Records table (ID, animal, subdivision, priority, status, reported, resolved, response hours) |
+| Search, filter, sort | Search box, priority pills, status filter, subdivision filter, "Sort by" selector + direction toggle, clickable column headers |
+| Pagination | Rows-per-page selector (5/10/25/50), previous/next and page-number buttons, "Showing x-y of n records" |
+| Interface | Existing STRAY-SAFE orange theme, responsive layout (1/2/3/6-column KPI grid, charts side by side on wide screens) |
+
+The search box and all filters apply to the whole page: the KPI cards, charts,
+key findings and records always describe the same filtered set of reports.
+A **Key findings** card summarises useful insights computed from the data
+(top subdivision, high-priority share, fastest/slowest resolution, busiest
+month).
+
+### How the KPI values are calculated
+
+- **Total Reports** - number of rows in the (filtered) data.
+- **Active Cases** - reports whose status is not closed (closed = Resolved,
+  Rejected, Deceased, Disputed, Archived).
+- **Resolution Rate** - Resolved reports / total reports x 100.
+- **High Priority** - reports with priority `High` (and how many are still open).
+- **Avg Response** - average hours from `reported_at` to `resolved_at` for
+  resolved reports.
+- **Rejected** - reports with status `Rejected` and their share of the total.
 
 ## Requirements
 
